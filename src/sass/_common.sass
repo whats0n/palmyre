@@ -1,0 +1,306 @@
+// # SHORT HOWTO
+// ## Sprites
+//     .whatever
+// 			+s(codedby) 
+// ## gradient example
+//     	+g(#232323, #5c5c5c);
+//	   horizontal
+//     	+gh(#232323, #5c5c5c);
+// ## making bw-images
+//     img
+//			@extend %gray
+// ## predefined media-queries: https://github.com/paranoida/sass-mediaqueries
+//     +r(320)
+//			display: none
+// +max-screen(1000), +iphone5, +iphone4, +ipad-retina, +ipad, +hdpi - also available
+//
+// ## use cycles
+//     @for $i from 1 through 3
+//       .item-#{$i}
+//			width: 2em * $i;
+//     @each $s in a,b,c
+// 	    	#{$s}
+//				display: none
+// ## fonts
+// Save fonts to /src/fonts
+// +font(book, cytiapro-black-webfont)
+// and create mixin
+// =book
+// 	font-family: "book", Arial, sans-serif
+=cor
+	font-family: 'Courgette', Arial, sans-serif
+
+=one
+	font-family: 'Fauna One', Arial, sans-serif
+
+=rob
+	font-family: 'Roboto', Arial, sans-serif
+
+body
+	+rob
+	font-size: 16px
+	line-height: 1.4
+	min-width: 1200px
+.title-h1, .title-h2, .title-h3, .title-h4, .title-h5, .title-h6
+	font-weight: normal
+	+one
+	line-height: 1.2
+.title-h2
+	font-size: 36px
+.title-h3
+	font-size: 30px
+// common blocks
+
+.breadcrumbs
+	color: #0947a7
+	padding: 20px 0
+	&__label
+		color: #7d97a8
+		float: right
+	&__list
+		font-size: 0
+		overflow: hidden
+	li
+		display: inline-block
+		vertical-align: top
+		&:first-child
+			&:before
+				display: none
+		&:before
+			font-size: 16px
+			display: inline-block
+			vertical-align: top
+			content: "/"
+			padding: 0 8px
+		a
+			color: #0947a7
+			font-size: 16px
+			&:hover
+				text-decoration: underline
+
+.sticker
+	display: inline-block
+	vertical-align: top
+	width: 64px
+	height: 64px
+	text-align: center
+	background-color: #ccc7c5
+	font-size: 14px
+	line-height: 1
+	padding: 27px 0 23px
+	color: white
+	+rob
+	text-transform: uppercase
+	border-radius: 50%
+	&_sale
+		background-color: #7d97a8
+	&_hot
+		background-color: #fc3180
+
+.tags
+	p
+		color: #7d97a8
+		font-weight: 300
+		line-height: 1.5
+		strong
+			color: #666
+
+.input
+	border: 1px solid #ccc
+	background: #fff
+	color: #666
+	font-size: 18px
+	text-transform: uppercase
+	+rob
+	width: 100%
+	padding: 8px 10px 7px
+	display: inline-block
+	vertical-align: top
+	&_center
+		text-align: center
+
+.btn
+	color: white
+	+rob
+	text-align: center
+	line-height: 1
+	padding: 10px 
+	font-size: 0
+	width: 100%
+	display: inline-block
+	vertical-align: top
+	&-pink
+		background-color: #fc3180
+		i
+			+s(cart)
+	&-gray
+		background-color: #7d97a8
+		i
+			+s(heart)
+	i, span
+		display: inline-block
+		vertical-align: top
+	span
+		font-size: 16px
+		padding: 2px 0 1px
+	i
+		margin-right: 10px
+
+
+//items
+.items
+	padding: 50px 0
+	&__title
+		text-align: center
+		.title-h3
+			color: #0947a7
+	&__row
+		margin: 0 -15px
+		+clr
+	&__col
+		width: 25%
+		float: left
+		padding: 75px 15px 0
+	&__box
+		width: 33.33%
+		float: left
+		padding: 75px 15px 0
+
+.item
+	position: relative
+	&-desc-wrap
+		margin-bottom: 17px
+
+	&-name
+		color: #666
+		font-size: 14px
+		font-weight: 300
+		margin-bottom: 10px
+	&-desc
+		float: left
+		width: 60%
+		color: #0c0c0c
+		font-size: 14px
+		line-height: 1.1
+	&-price
+		float: right
+		width: 40%
+		text-align: right
+		line-height: 1.1
+
+	&-old-price
+		color: #666
+		text-decoration: line-through
+		margin-bottom: 5px
+
+	&-new-price
+		color: #951550
+		font-weight: bold
+		font-size: 18px
+
+	&-button
+		display: block
+		background: #CCC7C5
+		color: white
+		font-weight: 300
+		text-transform: uppercase
+		text-align: center
+		padding: 7px 0
+		&:hover
+			background: #FC3180
+	&-marker
+		position: absolute
+		top: -25px
+		right: -15px
+		width: 64px
+		height: 64px
+		font-size: 14px
+		color: white
+		text-transform: uppercase
+		text-align: center
+		line-height: 64px
+		border-radius: 50%
+		&.sale
+			background: #7D97A8
+		&.new
+			background: #CCC7C5
+		&.hot
+			background: #FC3180
+	&-photo
+		margin-bottom: 17px
+		a
+			display: block
+			font-size: 0
+		img
+			width: 100%
+
+//featured
+.featured
+	&-image
+		display: block
+		background: black
+		margin-bottom: 20px
+		img
+			display: block
+			transition: opacity 0.3s linear
+			width: 100%
+		&:hover img
+			opacity: 0.7
+
+	&-title
+		display: block
+		font-family: "Fauna One", serif
+		color: #7d97a8
+		font-size: 24px
+		line-height: 1.2
+		margin-bottom: 17px
+	&-excerpt
+		color: #999
+		font-weight: 300
+		line-height: 1.2
+		border-bottom: 3px solid #ccc
+		padding-bottom: 22px
+		max-width: 90%
+	&-title:hover
+		color: #fc3180
+		+ .featured-excerpt
+			color: #fc3180
+			border-color: #fc3180
+
+//subscribe
+
+.subscribe
+	height: 277px
+	background-image: url(../img/subscribe-bg.jpg)
+	+cover
+	padding: 95px 0 57px
+	margin-top: 80px
+	&_mod
+		margin: 0 0 80px
+	.title-h3
+		text-align: center
+		color: #fff
+		margin-bottom: 47px
+	&-form
+		text-align: center
+		input
+			&[type="text"]
+				border: none
+				vertical-align: top
+				font-size: 20px
+				padding: 11px 15px
+				width: 600px
+			&[type="submit"]
+				border: none
+				vertical-align: top
+				background: #CCC7C5
+				color: white
+				font: 300 100% Roboto, sans-serif
+				text-transform: uppercase
+				padding: 0 50px
+				height: 45px
+				line-height: 45px
+				margin-left: 18px
+				cursor: pointer
+				&:hover
+					background: #FC3180
