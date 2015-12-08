@@ -1,38 +1,30 @@
 $(document).ready(function() {
+	//sliders
 
-	$('#navbar-toggle').click(function() {
-		$('.mobile-nav').slideToggle();
+	//main-slider
+	$('.js-main-slider').slick({
+		fade: true
 	});
-
-	$(".slider").bxSlider({
-		auto: true,
-		pause: 5000,
-		captions: true,
-		pager: false,
-		mode: 'fade'
+	//item-slider
+	$('.js-item-slider').slick({
+		slidesToShow: 4
 	});
-	
-	$(".items-carousel").bxSlider({
-		slideWidth: 270,
-		minSlides: 4,
-		maxSlides: 4,
-		moveSlides: 1,
-		pager: false
+	//featured-slider
+	$('.js-featured-slider').slick({
+		fade: true,
+		arrows: false,
+		dots: true,
+		autoplay: true,
+		autoplaySpeed: 5000,
 	});
-	
-	$(".featured-slider").bxSlider({
-		controls: false,
-		auto: true,
-		pause: 5000,
-		mode: 'fade'
-	});
-
+	//prod
 	$('.js-prod-big').slick({
 		arrows: false,
 		dots: false,
 		asNavFor: '.js-prod-small',
 		fade: true
 	});
+
 	$('.js-prod-small').slick({
 		arrows: false,
 		dots: false,

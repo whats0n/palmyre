@@ -54,14 +54,21 @@
 		+one
 		line-height: 1
 		padding: 0 0 25px
-		&-main
+		min-height: 98px
+		.amount
 			color: #0c49a8
 			font-size: 40px
-	&__discount
-		color: #7d97a8
-		font-size: 24px
-		text-decoration: line-through
-		margin-bottom: 9px
+			display: block
+		ins, del
+			display: block
+		ins
+			text-decoration: none
+		del
+			.amount
+				color: #7d97a8
+				font-size: 24px
+				text-decoration: line-through
+				margin-bottom: 9px
 	&__ads
 		+clr
 		font-size: 0
