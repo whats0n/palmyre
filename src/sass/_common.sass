@@ -41,14 +41,33 @@ body
 	font-size: 16px
 	line-height: 1.4
 	min-width: 1200px
+h1, h2, h3, h4, h5, h6
+	font-weight: normal
 .title-h1, .title-h2, .title-h3, .title-h4, .title-h5, .title-h6
 	font-weight: normal
 	+one
 	line-height: 1.2
+.title-h1
+	font-size: 40px
+	color: #0947a7
 .title-h2
 	font-size: 36px
 .title-h3
 	font-size: 30px
+a
+	text-decoration: none
+//clear
+.clear
+	clear: both
+
+.clearfix:after
+	content: "."
+	display: block
+	clear: both
+	visibility: hidden
+	line-height: 0
+	height: 0
+
 // common blocks
 
 .breadcrumbs
@@ -146,6 +165,24 @@ body
 	i
 		margin-right: 10px
 
+.btn-delete
+	width: 55px
+	height: 39px
+	background-color: #ccc7c5
+	position: relative
+	cursor: pointer
+	display: inline-block
+	vertical-align: top
+	width: 100%
+	&:hover
+		background: #FC3180
+	&:before
+		content: ''
+		position: absolute
+		top: 50%
+		left: 50%
+		margin: -6px 0 0 -6px
+		+s(close)
 
 //items
 .items
@@ -166,6 +203,11 @@ body
 		float: left
 		padding: 75px 15px 0
 
+.main-title
+	+clr
+	.title-h1
+		overflow: hidden
+
 .item
 	position: relative
 	&-desc-wrap
@@ -182,17 +224,33 @@ body
 		color: #0c0c0c
 		font-size: 14px
 		line-height: 1.1
+		height: 30px
+		overflow: hidden
 	&-price
 		float: right
 		width: 40%
 		text-align: right
 		line-height: 1.1
-
+		min-height: 41px
+		.amount
+			color: #951550
+			font-weight: bold
+			font-size: 18px
+			display: block
+		ins, del
+			display: block
+		ins
+			text-decoration: none
+		del
+			.amount
+				color: #666
+				text-decoration: line-through
+				margin-bottom: 5px
+				font-size: 16px
 	&-old-price
 		color: #666
 		text-decoration: line-through
 		margin-bottom: 5px
-
 	&-new-price
 		color: #951550
 		font-weight: bold
@@ -205,7 +263,7 @@ body
 		font-weight: 300
 		text-transform: uppercase
 		text-align: center
-		padding: 7px 0
+		padding: 9px 0 8px
 		&:hover
 			background: #FC3180
 	&-marker
@@ -220,6 +278,8 @@ body
 		text-align: center
 		line-height: 64px
 		border-radius: 50%
+		z-index: 2
+		transform: translate3d(0, 0, 0)
 		&.sale
 			background: #7D97A8
 		&.new
@@ -233,9 +293,39 @@ body
 			font-size: 0
 		img
 			width: 100%
-			
+	&-bottom
+		+clr
+	&-delete
+		float: right
+		width: 55px
+		margin-left: 10px
+	&-btn
+		overflow: hidden
+
 //featured
 .featured
+	padding-bottom: 19px
+	position: relative
+	border-bottom: 3px solid #ccc
+	&:hover
+		border-color: #fc3180
+		.featured
+			&-title, &-excerpt
+				color: #fc3180
+	&_big
+		padding-bottom: 30px
+		.featured
+			&-image, &-slider
+				margin-bottom: 28px
+			&-title
+				font-size: 36px
+				margin-bottom: 10px
+				height: 43px
+			&-excerpt
+				height: 42px
+				p
+					font-size: 18px
+					max-width: 440px
 	&-image
 		display: block
 		background: black
@@ -244,28 +334,28 @@ body
 			display: block
 			transition: opacity 0.3s linear
 			width: 100%
+			transform: translate3d(0, 0, 0)
 		&:hover img
 			opacity: 0.7
 
 	&-title
 		display: block
-		font-family: "Fauna One", serif
+		+one
 		color: #7d97a8
 		font-size: 24px
 		line-height: 1.2
 		margin-bottom: 17px
+		height: 56px
+		overflow: hidden
 	&-excerpt
 		color: #999
 		font-weight: 300
 		line-height: 1.2
-		border-bottom: 3px solid #ccc
-		padding-bottom: 22px
 		max-width: 90%
-	&-title:hover
-		color: #fc3180
-		+ .featured-excerpt
-			color: #fc3180
-			border-color: #fc3180
+		height: 60px
+		overflow: hidden
+	&-slider
+		margin-bottom: 20px
 
 //subscribe
 
@@ -281,26 +371,116 @@ body
 		text-align: center
 		color: #fff
 		margin-bottom: 47px
-	&-form
-		text-align: center
+	&__form
+		position: relative
+		display: block
+		width: 100%
+		max-width: 770px
+		margin: 0 auto
+		padding: 0 175px 0 0
+	&__input
 		input
-			&[type="text"]
-				border: none
-				vertical-align: top
-				font-size: 20px
-				padding: 11px 15px
-				width: 600px
-			&[type="submit"]
-				border: none
-				vertical-align: top
-				background: #CCC7C5
-				color: white
-				font: 300 100% Roboto, sans-serif
-				text-transform: uppercase
-				padding: 0 50px
-				height: 45px
-				line-height: 45px
-				margin-left: 18px
-				cursor: pointer
-				&:hover
-					background: #FC3180
+			border: none
+			vertical-align: top
+			font-size: 20px
+			padding: 10px 15px
+			width: 600px
+			+one
+	&__btn
+		position: absolute
+		top: 0
+		right: 0
+		button
+			border: none
+			vertical-align: top
+			background: #CCC7C5
+			color: white
+			font-weight: 300
+			+rob
+			text-transform: uppercase
+			padding: 15px 50px 14px
+			line-height: 1
+			font-size: 16px
+			cursor: pointer
+			&:hover
+				background: #FC3180
+
+//pagination
+.pagination
+	text-align: center
+	font-size: 0
+	li
+		display: inline-block
+		vertical-align: top
+		padding: 0 10px
+	a
+		min-width: 25px
+		padding: 5px 3px 4px
+		line-height: 1
+		font-size: 16px
+		color: #666
+		text-align: center
+		display: inline-block
+		vertical-align: top
+		font-weight: 300
+		&.is-active, &.pagination__first, &.pagination__last
+			background-color: #7d97a8
+			color: white
+			&:hover
+				background-color: #fc3180
+		&:hover
+			background-color: #fc3180
+			color: white
+		&.pagination__first, &.pagination__last
+			min-width: 62px
+			padding: 5px 8px 4px
+		&.pagination__first
+			&:before
+				content: '\00ab'
+				margin-right: 3px
+		&.pagination__last
+			&:after
+				content: '\00bb'
+				margin-left: 3px
+.main
+	+clr
+	padding: 60px 0 130px
+	&__sidebar
+		font-size: 14px
+		text-transform: uppercase
+		width: 23%
+		float: left
+		li
+			margin-bottom: 34px
+		a
+			color: #666
+			display: block
+			line-height: 1
+			&.is-active
+				color: #0947a7
+				text-decoration: underline
+	&__content
+		width: 77%
+		float: left
+		h4, h5
+			line-height: 1.2
+			color: #333
+		h4
+			+one
+			font-size: 26px
+			margin-bottom: 18px
+		h5
+			font-size: 24px
+			margin-bottom: 11px
+		img
+			display: block
+			width: 100%
+			margin-bottom: 19px
+		p, li
+			color: #666
+			font-size: 16px
+			line-height: 24px
+		p
+			margin-bottom: 34px
+		li
+			padding: 5px 0 6px

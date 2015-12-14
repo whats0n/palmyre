@@ -1,29 +1,53 @@
-.clear
-	clear: both
+.main-slider
+	margin-bottom: -1px
+	position: relative
+	z-index: 1
+.main-slide
+	img
+		width: 100%
+	&__text
+		position: absolute
+		top: 0
+		bottom: 0
+		left: 0
+		right: 0
+		+vertical
+	&__center
+		display: inline-block
+		vertical-align: middle
+		width: 100%
+		p
+			color: white
+			font-size: 18px
+			font-weight: 300
+			max-width: 510px
+			margin: 0 auto
+			line-height: 1.2
+	&__title
+		color: white
+		+one
+		font-size: 92px
+		line-height: 1
+		margin-bottom: 43px
 
-.clearfix:after
-	content: "."
-	display: block
-	clear: both
-	visibility: hidden
-	line-height: 0
-	height: 0
-
-h1, h2, h3, h4, h5, h6
-	color: #0947A7
-	font-family: "Fauna One", serif
-
-a
-	text-decoration: none
-
+.featureds
+	padding: 25px 0 0
+	&__row
+		margin: 0 -15px
+		+clr
+	&__col
+		width: 50%
+		padding: 0 15px
+		float: left
 .block-heading
 	text-align: center
 	margin-top: 40px
 
 .container
-	// padding: 0 20px
 	margin: 0 auto
 	max-width: 1170px
+	&_last
+		padding-bottom: 60px
 
 .section
 	margin: 40px 0
@@ -35,90 +59,6 @@ a
 	li
 		position: relative
 		margin-right: 30px
-
-.bx-carousel
-	.bx-wrapper
-		max-width: none !important
-	.bx-viewport
-		height: 430px !important
-	.bx-controls
-		position: relative
-		top: -240px
-
-.slider-wrap
-	position: relative
-	.bx-controls
-		position: absolute
-		width: 100%
-		top: 50%
-		margin-top: -22px
-		z-index: 100
-
-.slider img
-	width: 100%
-	height: auto
-
-.bx-prev, .bx-next
-	display: block
-	text-indent: -9999px
-	width: 44px
-	height: 44px
-	background: url(../img/arrows.png)
-
-.bx-prev
-	float: left
-
-.bx-next
-	float: right
-	background-position: -44px 0
-
-.bx-carousel
-	.bx-prev
-		margin-left: -22px
-	.bx-next
-		margin-right: -22px
-
-.bx-prev:hover
-	background-position: 0 -44px
-
-.bx-next:hover
-	background-position: -44px -44px
-
-.bx-caption
-	color: #fff
-	position: absolute
-	top: 50%
-	margin-top: -53px
-	width: 100%
-	font-family: "Fauna One", serif
-	font-size: 86px
-	text-align: center
-
-.cat-list .bx-controls
-	position: relative
-	top: -30px
-	z-index: 100
-	height: 0
-
-.bx-viewport img
-	vertical-align: bottom
-
-.bx-wrapper .bx-pager
-	padding-left: 20px
-	.bx-pager-item
-		display: inline-block
-	&.bx-default-pager a
-		background: white
-		border-radius: 5px
-		display: block
-		height: 10px
-		margin: 0 5px
-		outline: 0 none
-		text-indent: -9999px
-		width: 10px
-		&:hover, &.active
-			background: #0A0707
-
 
 .header-top
 	background: #0947A7
@@ -261,6 +201,7 @@ a
 	font-size: 20px
 	line-height: 33px
 	color: #666
+	+one
 
 .search-btn
 	position: absolute
@@ -381,8 +322,6 @@ a
 	height: 28px
 	+ a
 		margin-left: 7px
-
-a
 	&.fb
 		background: url(../img/social.png) 0 0 no-repeat
 		width: 28px
@@ -401,6 +340,8 @@ a
 	&.pi
 		background: url(../img/social.png) -172px 0 no-repeat
 		width: 28px
+	&.rss
+		+s(rss)
 
 .contact-email
 	display: block
