@@ -205,8 +205,9 @@ a { text-decoration: none; }
 .main__content p { margin-bottom: 34px; }
 .main__content li { padding: 5px 0 6px; }
 
-.main-slider { margin-bottom: -1px; }
+.main-slider { margin-bottom: -1px; position: relative; z-index: 1; }
 
+.main-slide img { width: 100%; }
 .main-slide__text { position: absolute; top: 0; bottom: 0; left: 0; right: 0; text-align: center; font-size: 0; }
 .main-slide__text:before { content: ""; display: inline-block; vertical-align: middle; width: 0; height: 100%; }
 .main-slide__center { display: inline-block; vertical-align: middle; width: 100%; }
