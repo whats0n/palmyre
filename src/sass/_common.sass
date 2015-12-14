@@ -224,6 +224,8 @@ a
 		color: #0c0c0c
 		font-size: 14px
 		line-height: 1.1
+		height: 30px
+		overflow: hidden
 	&-price
 		float: right
 		width: 40%
@@ -302,15 +304,25 @@ a
 
 //featured
 .featured
+	padding-bottom: 19px
+	position: relative
+	border-bottom: 3px solid #ccc
+	&:hover
+		border-color: #fc3180
+		.featured
+			&-title, &-excerpt
+				color: #fc3180
 	&_big
+		padding-bottom: 30px
 		.featured
 			&-image, &-slider
 				margin-bottom: 28px
 			&-title
 				font-size: 36px
 				margin-bottom: 10px
+				height: 43px
 			&-excerpt
-				min-height: 75px
+				height: 42px
 				p
 					font-size: 18px
 					max-width: 440px
@@ -333,19 +345,15 @@ a
 		font-size: 24px
 		line-height: 1.2
 		margin-bottom: 17px
+		height: 56px
+		overflow: hidden
 	&-excerpt
 		color: #999
 		font-weight: 300
 		line-height: 1.2
-		border-bottom: 3px solid #ccc
-		padding-bottom: 22px
-		// max-width: 90%
-		min-height: 82px
-	&-title:hover
-		color: #fc3180
-		+ .featured-excerpt
-			color: #fc3180
-			border-color: #fc3180
+		max-width: 90%
+		height: 60px
+		overflow: hidden
 	&-slider
 		margin-bottom: 20px
 
