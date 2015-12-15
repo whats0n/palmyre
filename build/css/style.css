@@ -27,9 +27,17 @@ html { -webkit-box-sizing: border-box; box-sizing: border-box; }
 
 .icon, [class^="icon-"], [class*=" icon-"] { display: inline-block; }
 
-.icon-sepa:before { content: ""; }
+.icon-fb:before { content: ""; }
 
-.icon-skrill:before { content: ""; }
+.icon-gp:before { content: ""; }
+
+.icon-in:before { content: ""; }
+
+.icon-pi:before { content: ""; }
+
+.icon-rss:before { content: ""; }
+
+.icon-tw:before { content: ""; }
 
 .slick-slider { position: relative; display: block; -webkit-box-sizing: border-box; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-touch-callout: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; -ms-touch-action: pan-y; touch-action: pan-y; -webkit-tap-highlight-color: transparent; }
 
@@ -158,9 +166,10 @@ a { text-decoration: none; }
 .item-delete { float: right; width: 55px; margin-left: 10px; }
 .item-btn { overflow: hidden; }
 
-.featured { padding-bottom: 19px; position: relative; border-bottom: 3px solid #ccc; }
+.featured { padding-bottom: 19px; position: relative; border-bottom: 3px solid #ccc; display: block; }
 .featured:hover { border-color: #fc3180; }
 .featured:hover .featured-title, .featured:hover .featured-excerpt { color: #fc3180; }
+.featured:hover .featured-image img { opacity: 0.7; }
 .featured_big { padding-bottom: 30px; }
 .featured_big .featured-image, .featured_big .featured-slider { margin-bottom: 28px; }
 .featured_big .featured-title { font-size: 36px; margin-bottom: 10px; height: 43px; }
@@ -168,10 +177,10 @@ a { text-decoration: none; }
 .featured_big .featured-excerpt p { font-size: 18px; max-width: 440px; }
 .featured-image { display: block; background: black; margin-bottom: 20px; }
 .featured-image img { display: block; -webkit-transition: opacity 0.3s linear; transition: opacity 0.3s linear; width: 100%; -webkit-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); }
-.featured-image:hover img { opacity: 0.7; }
 .featured-title { display: block; font-family: "Fauna One", Arial, sans-serif; color: #7d97a8; font-size: 24px; line-height: 1.2; margin-bottom: 17px; height: 56px; overflow: hidden; }
 .featured-excerpt { color: #999; font-weight: 300; line-height: 1.2; max-width: 90%; height: 60px; overflow: hidden; }
 .featured-slider { margin-bottom: 20px; }
+.featured-link, .featured-slide { display: block; }
 
 .subscribe { height: 277px; background-image: url(../img/subscribe-bg.jpg); background-repeat: no-repeat; background-size: cover; background-position: 50% 50%; padding: 95px 0 57px; margin-top: 80px; }
 .subscribe_mod { margin: 0 0 80px; }
@@ -327,15 +336,15 @@ a { text-decoration: none; }
 
 .social-wrap { float: left; margin-top: -5px; }
 
-.social a { display: block; float: left; height: 28px; }
+.social a { display: block; float: left; height: 28px; width: 28px; background-color: #fff; -webkit-border-radius: 50%; border-radius: 50%; position: relative; }
 .social a + a { margin-left: 7px; }
-.social a.fb { background: url(../img/social.png) 0 0 no-repeat; width: 28px; }
-.social a.tw { background: url(../img/social.png) -35px 0 no-repeat; width: 28px; }
-.social a.rs { background: url(../img/social.png) -69px 0 no-repeat; width: 28px; }
-.social a.gp { background: url(../img/social.png) -103px 0 no-repeat; width: 28px; }
-.social a.in { background: url(../img/social.png) -139px 0 no-repeat; width: 28px; }
-.social a.pi { background: url(../img/social.png) -172px 0 no-repeat; width: 28px; }
-.social a.rss { background-image: url("../img/icons.png"); width: 28px; height: 28px; background-position: 0px 0px; }
+.social a:before { background-repeat: no-repeat; background-size: cover; background-position: 50% 50%; content: ""; position: absolute; top: 50%; left: 50%; }
+.social a.fb:before { background-image: url(../img/fb.svg); width: 6px; height: 13px; margin: -6px 0 0 -3px; }
+.social a.tw:before { background-image: url(../img/tw.svg); width: 12px; height: 10px; margin: -4px 0 0 -6px; }
+.social a.rss:before { background-image: url(../img/rss.svg); width: 10px; height: 11px; margin: -5px 0 0 -5px; }
+.social a.gp:before { background-image: url(../img/gp.svg); width: 13px; height: 13px; margin: -6px 0 0 -6px; }
+.social a.in:before { background-image: url(../img/in.svg); width: 11px; height: 11px; margin: -5px 0 0 -5px; }
+.social a.pi:before { background-image: url(../img/pi.svg); width: 11px; height: 14px; margin: -7px 0 0 -6px; }
 
 .contact-email { display: block; float: left; color: #dadada; font-size: 14px; margin-left: 27px; }
 

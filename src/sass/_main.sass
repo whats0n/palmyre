@@ -320,28 +320,54 @@
 	display: block
 	float: left
 	height: 28px
+	width: 28px
+	background-color: #fff
+	border-radius: 50%
+	position: relative
 	+ a
 		margin-left: 7px
+	&:before
+		+cover
+		content: ''
+		position: absolute
+		top: 50%
+		left: 50%
 	&.fb
-		background: url(../img/social.png) 0 0 no-repeat
-		width: 28px
+		&:before
+			background-image: url(../img/fb.svg)
+			width: 6px
+			height: 13px
+			margin: -6px 0 0 -3px
 	&.tw
-		background: url(../img/social.png) -35px 0 no-repeat
-		width: 28px
-	&.rs
-		background: url(../img/social.png) -69px 0 no-repeat
-		width: 28px
-	&.gp
-		background: url(../img/social.png) -103px 0 no-repeat
-		width: 28px
-	&.in
-		background: url(../img/social.png) -139px 0 no-repeat
-		width: 28px
-	&.pi
-		background: url(../img/social.png) -172px 0 no-repeat
-		width: 28px
+		&:before
+			background-image: url(../img/tw.svg)
+			width: 12px
+			height: 10px
+			margin: -4px 0 0 -6px
 	&.rss
-		+s(rss)
+		&:before
+			background-image: url(../img/rss.svg)
+			width: 10px
+			height: 11px
+			margin: -5px 0 0 -5px
+	&.gp
+		&:before
+			background-image: url(../img/gp.svg)
+			width: 13px
+			height: 13px
+			margin: -6px 0 0 -6px
+	&.in
+		&:before
+			background-image: url(../img/in.svg)
+			width: 11px
+			height: 11px
+			margin: -5px 0 0 -5px
+	&.pi
+		&:before
+			background-image: url(../img/pi.svg)
+			width: 11px
+			height: 14px
+			margin: -7px 0 0 -6px
 
 .contact-email
 	display: block
