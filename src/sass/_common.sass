@@ -27,6 +27,12 @@
 // and create mixin
 // =book
 // 	font-family: "book", Arial, sans-serif
+
++font("Adventure", adventure)
+
+=ad
+	font-family: "Adventure", Arial, sans-serif
+
 =cor
 	font-family: 'Courgette', Arial, sans-serif
 
@@ -54,6 +60,14 @@ h1, h2, h3, h4, h5, h6
 	font-size: 36px
 .title-h3
 	font-size: 30px
+.title-h4
+	font-size: 28px
+	text-transform: uppercase
+	color: #0b49a8
+.title-h5
+	font-size: 24px
+	line-height: 40px
+	color: #666
 a
 	text-decoration: none
 //clear
@@ -488,3 +502,342 @@ a
 			margin-bottom: 34px
 		li
 			padding: 5px 0 6px 
+
+.blog
+	max-width: 850px
+	padding: 0 10px 190px
+	margin: 0 auto
+	&_mod
+		padding-bottom: 70px
+	&-top
+		text-align: center
+		padding: 30px 0 10px
+	&__logo
+		position: relative
+		display: inline-block
+		vertical-align: top
+		padding: 80px 0 0
+		font-style: 0
+		margin-bottom: 13px
+		&:before
+			content: ""
+			position: absolute
+			top: 0
+			left: 50%
+			margin-left: -23px
+			width: 47px
+			height: 66px
+			background: url(../img/logo.png)
+			+cover
+		img
+			max-width: 211px
+			margin-bottom: 10px
+			display: block
+		div
+			color: #393c3e
+			font-size: 15px
+			line-height: 1
+			+ad
+			font-weight: bold
+	&__title
+		+one
+		font-size: 18px
+		text-transform: uppercase
+		color: #ccc
+		line-height: 1
+	&__row
+		+clr
+		margin: 0 -15px
+	&__col
+		padding: 0 15px
+		width: 50%
+		float: left
+	.pagination
+		padding: 70px 0 0
+.article
+	text-align: center
+	padding: 100px 0 20px
+	border-bottom: 1px solid #ccc
+	margin-bottom: 30px
+	.title-h4
+		max-width: 740px
+		margin: 0 auto 15px
+		line-height: 40px
+		a
+			display: inline-block
+			color: #0b49a8
+			padding: 6px 20px 5px
+			&:hover
+				background-color: #0b49a8
+				color: #fff
+	&__list
+		font-size: 0
+		margin-bottom: 35px
+		li
+			display: inline-block
+			vertical-align: top
+			font-size: 12px
+			color: #999
+			&:first-child
+				&:before
+					display: none
+			&:before
+				content: "/"
+				display: inline-block
+				vertical-align: top
+				margin: 0 7px 0 7px
+			span
+				text-transform: uppercase
+			a
+				color: #999
+				&:hover
+					color: #0b49a8
+					text-decoration: underline
+	&__img
+		width: 100%
+		display: block
+		margin-bottom: 37px
+	&__text, &__description
+		text-align: left
+		padding: 0 30px
+	&__description
+		margin-bottom: 60px
+	p
+		color: #666
+		font-size: 16px
+		font-weight: 300
+		line-height: 24px
+	&__text
+		overflow: hidden
+		height: 96px
+		position: relative
+		margin-bottom: 30px
+		&:after
+			content: ""
+			position: absolute
+			bottom: 0
+			left: 0
+			right: 0
+			height: 2px
+			background: #fff
+			box-shadow: 0 0 30px 20px #fff
+	&__bottom
+		+clr
+	&__more
+		float: left
+		color: #666
+		font-size: 14px
+		font-weight: 300
+		line-height: 32px
+		text-transform: uppercase
+		text-decoration: none
+		margin-left: 30px
+		&:hover
+			text-decoration: underline
+			color: #1b55ae
+	&__slide
+		&-img
+			height: 435px
+			+cover
+			position: relative
+			display: block
+			cursor: pointer
+			margin-bottom: 15px
+			&:hover
+				&:before, &:after
+					opacity: 1
+			&:before, &:after
+				content: ""
+				position: absolute
+				opacity: 0
+				transition: opacity 0.25s linear
+			&:before
+				background-color: rgba(0, 0, 0, 0.46)
+				top: 0
+				bottom: 0
+				left: 0
+				right: 0
+			&:after
+				top: 50%
+				left: 50%
+				+s(zoom)
+				margin: -15px 0 0 -15px
+		&-text
+			opacity: 0.7
+			color: #666
+			font-size: 14px
+			font-weight: 300
+			line-height: 24px
+			display: block
+			text-align: left
+			padding: 0 30px
+	&__slider
+		margin-bottom: 90px
+		.slick-prev, .slick-next
+			top: 50%
+			margin-top: -17px
+			background: none
+			&:before
+				display: none
+		.slick-prev
+			+s(arr-prev)
+			left: 16px
+		.slick-next
+			+s(arr-next)
+			right: 16px
+	.main-social
+		float: right
+	.title-h5
+		text-align: left
+		padding: 0 30px
+		margin-bottom: 15px
+	&__row
+		text-align: left
+		padding: 0 15px 60px
+		+clr
+	&__col
+		padding: 0 15px
+		width: 50%
+		float: left
+	&__quote
+		text-align: left
+		padding: 0 30px 80px 100px
+	&__items
+		padding: 25px 15px 0
+		+clr
+	&__footer
+		padding: 0 30px
+		text-align: left
+	&__share
+		+clr
+		padding: 35px 0
+		span
+			margin-right: 15px
+			color: #666
+			font-size: 14px
+			font-weight: 300
+			line-height: 32px
+			float: left
+		.main-social
+			float: left
+	&_small
+		text-align: left
+		border-bottom: none
+		.article
+			&__list
+				margin-bottom: 30px
+			&__img, &__text
+				margin-bottom: 20px
+			&__text
+				padding: 0
+			&__more
+				margin: 0
+		.title-h4
+			margin-bottom: 20px
+			a
+				padding: 0
+				&:hover
+					background: none
+					color: #0b49a8
+					text-decoration: underline
+
+.a-item
+	padding: 15px 15px
+	width: 25%
+	float: left
+	text-align: left
+	img
+		display: block
+		width: 100%
+		margin-bottom: 10px
+	span
+		display: block
+		text-align: left
+		color: #666
+		font-size: 14px
+		font-weight: 300
+		line-height: 36px
+
+.main-social
+	font-size: 0
+	text-align: left
+	li
+		display: inline-block
+		vertical-align: top
+		padding: 0 0 0 10px
+	a
+		display: block
+		position: relative
+		border-radius: 50%
+		width: 32px
+		height: 32px
+		background-color: #c5cdd1
+		&:hover
+			background-color: #4fc6f8
+		&:before
+			content: ""
+			position: absolute
+			top: 50%
+			left: 50%
+			+cover
+		&.is-fb
+			&:before
+				background-image: url(../img/fb-white.svg)
+				width: 8px
+				height: 16px
+				margin: -8px 0 0 -4px
+		&.is-tw
+			&:before
+				background-image: url(../img/tw-white.svg)
+				width: 16px
+				height: 13px
+				margin: -6px 0 0 -8px
+		&.is-gp
+			&:before
+				background-image: url(../img/gp-white.svg)
+				width: 16px
+				height: 16px
+				margin: -8px 0 0 -6px
+.posts
+	padding: 10px 0 0	
+	.title-h5
+		margin-bottom: 35px
+.post
+	&-field
+		+clr
+		margin-bottom: 20px
+		&__label
+			width: 100px
+			float: left
+			color: #666
+			font-size: 14px
+			font-weight: 300
+			line-height: 36px
+		&__input
+			overflow: hidden
+			max-width: 470px
+	&-full
+		font-size: 0
+	&-input, &-textarea
+		background-color: white
+		border: 1px solid #ccc
+		padding: 9px 10px
+		color: #666
+		font-size: 14px
+		width: 100%
+	&-textarea
+		resize: none
+		margin-bottom: 20px
+		display: block
+	&-btn
+		width: 210px
+		background: #fc3180
+		color: white
+		font-size: 16px
+		line-height: 39px
+		text-transform: uppercase
+		text-align: center
+		&:hover
+			background: lighten(#fc3180, 10%)
+		&:active
+			background: darken(#fc3180, 10%)

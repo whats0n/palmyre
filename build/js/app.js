@@ -1408,4 +1408,5 @@ $(document).ready(function() {
 		focusOnSelect: true,
 		infinite: false
 	});
+	$('.js-article-slider').slick();
 });
