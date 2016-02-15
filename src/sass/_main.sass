@@ -2,6 +2,9 @@
 	margin-bottom: -1px
 	position: relative
 	z-index: 1
+	+r2
+		display: none
+		
 .main-slide
 	img
 		width: 100%
@@ -29,16 +32,23 @@
 		font-size: 92px
 		line-height: 1
 		margin-bottom: 43px
+		+r1
+			font-size: 80px
 
 .featureds
 	padding: 25px 0 0
 	&__row
 		margin: 0 -15px
 		+clr
+		+r1
+			margin: 0
 	&__col
 		width: 50%
 		padding: 0 15px
 		float: left
+		+r2
+			width: 100%
+			padding-bottom: 45px
 .block-heading
 	text-align: center
 	margin-top: 40px
@@ -62,6 +72,9 @@
 
 .header-top
 	background: #0947A7
+	+r1
+		display: none
+		
 
 .header-top-row
 	text-align: right
@@ -75,19 +88,48 @@
 
 .header-logo-row
 	padding: 21px 0 0
+	+r1
+		padding: 20px 15px
+	+r2
+		text-align: center
+		
 
 .header-menu-row
 	border-top: 1px solid #ccc
 	margin-top: -51px
+	+r1
+		display: none
+		
 
 .logo-wrap
 	float: left
+	+r2
+		float: none
+		display: inline-block
+		vertical-align: top
+
+.logo
+	img
+		+r3
+			width: 125px		
 
 .side-logo
 	float: left
 	margin-left: -151px
+	+r1
+		display: none
+	+r2
+		display: inline-block
+		vertical-align: top
+		float: none
+		margin: 0 10px 0 0
+		height: 69px
+	+r3
+		height: 34px
 	img
 		vertical-align: bottom
+		+r2
+			height: 100%
 
 .cart, .wish-list, .menu-sale
 	display: block
@@ -96,6 +138,9 @@
 	font-family: "Fauna One", serif
 	color: black
 	margin-top: 30px
+	+r1
+		display: none
+		
 
 .cart strong, .wish-list strong
 	font-family: Roboto
@@ -121,6 +166,8 @@
 	color: #666
 	font: 18px/20px Courgette, sans-serif
 	margin: 0
+	+r3
+		font-size: 9px
 
 #header-menu-left
 	float: left
@@ -183,6 +230,11 @@
 .search-row > #searchform
 	border-top: 1px solid #ccc
 	margin-top: 0
+
+.search-row
+	+r2
+		display: none
+		
 
 .slider-wrap + .search-row > #searchform
 	border-top: none
@@ -315,6 +367,11 @@
 .social-wrap
 	float: left
 	margin-top: -5px
+	+r4
+		float: none
+		text-align: center
+		margin: 0 0 25px
+		
 
 .social a
 	display: block
@@ -324,6 +381,11 @@
 	background-color: #fff
 	border-radius: 50%
 	position: relative
+	+r4
+		float: none
+		display: inline-block
+		vertical-align: top
+		
 	+ a
 		margin-left: 7px
 	&:before
@@ -375,13 +437,36 @@
 	color: #dadada
 	font-size: 14px
 	margin-left: 27px
+	+r2
+		float: right
+	+r4
+		float: none
+		text-align: center
+		margin: 0 0 10px
+		
+		
 
 .footer-menu
 	float: right
+	+r2
+		clear: both
+		float: none
+		padding-top: 15px
+		text-align: center
+		
 	li
 		float: left
+		+r2
+			float: none
+			display: inline-block
+			vertical-align: top
+		+r4
+			display: block	
+			padding: 4px 0		
 		+ li
 			margin-left: 10px
+			+r4
+				margin: 0
 		a
 			color: white
 			font-size: 14px
@@ -393,6 +478,11 @@
 	font-size: 14px
 	font-weight: 300
 	margin-top: 15px
+	+r2
+		text-align: center
+	+r4
+		font-size: 12px
+		
 
 @media all and (min-width: 480px)
 

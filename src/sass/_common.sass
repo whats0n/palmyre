@@ -28,6 +28,20 @@
 // =book
 // 	font-family: "book", Arial, sans-serif
 
+//media
+=r1
+	@media only screen and (max-width: "1220px")
+		@content
+=r2
+	@media only screen and (max-width: "980px")
+		@content
+=r3
+	@media only screen and (max-width: "660px")
+		@content
+=r4
+	@media only screen and (max-width: "480px")
+		@content
+
 +font("Adventure", adventure)
 
 =ad
@@ -46,7 +60,7 @@ body
 	+rob
 	font-size: 16px
 	line-height: 1.4
-	min-width: 1200px
+	min-width: 320px
 h1, h2, h3, h4, h5, h6
 	font-weight: normal
 .title-h1, .title-h2, .title-h3, .title-h4, .title-h5, .title-h6
@@ -60,6 +74,8 @@ h1, h2, h3, h4, h5, h6
 	font-size: 36px
 .title-h3
 	font-size: 30px
+	+r3
+		font-size: 27px
 .title-h4
 	font-size: 28px
 	text-transform: uppercase
@@ -201,6 +217,9 @@ a
 //items
 .items
 	padding: 50px 0
+	&_main
+		+r3
+			padding: 30px 0 10px
 	&__title
 		text-align: center
 		.title-h3
@@ -208,14 +227,23 @@ a
 	&__row
 		margin: 0 -15px
 		+clr
+		+r1
+			margin: 0
 	&__col
 		width: 25%
 		float: left
 		padding: 75px 15px 0
+		+r3
+			padding: 25px 15px 0
 	&__box
 		width: 33.33%
 		float: left
 		padding: 75px 15px 0
+		+r2
+			width: 50%
+		+r3
+			width: 100%
+			padding: 45px 15px 0
 
 .main-title
 	+clr
@@ -278,6 +306,8 @@ a
 		text-transform: uppercase
 		text-align: center
 		padding: 9px 0 8px
+		+r3
+			padding: 19px 0
 		&:hover
 			background: #FC3180
 	&-marker
@@ -294,6 +324,8 @@ a
 		border-radius: 50%
 		z-index: 2
 		transform: translate3d(0, 0, 0)
+		+r1
+			right: 15px
 		&.sale
 			background: #7D97A8
 		&.new
@@ -322,6 +354,8 @@ a
 	position: relative
 	border-bottom: 3px solid #ccc
 	display: block
+	+r3
+		border-bottom-width: 1px
 	&:hover
 		border-color: #fc3180
 		.featured
@@ -332,18 +366,29 @@ a
 				opacity: 0.7
 	&_big
 		padding-bottom: 30px
+		+r3
+			padding-bottom: 20px
 		.featured
 			&-image, &-slider
 				margin-bottom: 28px
+				+r3
+					margin-bottom: 20px
 			&-title
 				font-size: 36px
 				margin-bottom: 10px
 				height: 43px
+				+r3
+					font-size: 18px
+					height: auto
+					margin-bottom: 15px
 			&-excerpt
 				height: 42px
 				p
 					font-size: 18px
 					max-width: 440px
+					+r3
+						font-size: 12px
+						height: auto
 	&-image
 		display: block
 		background: black
@@ -371,6 +416,8 @@ a
 		overflow: hidden
 	&-slider
 		margin-bottom: 20px
+		img
+			width: 100%
 	&-link, &-slide
 		display: block
 		
@@ -381,14 +428,23 @@ a
 	height: 277px
 	background-image: url(../img/subscribe-bg.jpg)
 	+cover
-	padding: 95px 0 57px
+	padding: 95px 30px 57px
 	margin-top: 80px
+	+r3
+		padding: 45px 30px 50px
+		height: auto
+		margin: 0
+	+r4
+		padding: 45px 15px
 	&_mod
 		margin: 0 0 80px
 	.title-h3
 		text-align: center
 		color: #fff
 		margin-bottom: 47px
+		+r3
+			margin-bottom: 20px
+			font-size: 16px
 	&__form
 		position: relative
 		display: block
@@ -396,13 +452,15 @@ a
 		max-width: 770px
 		margin: 0 auto
 		padding: 0 175px 0 0
+		+r3
+			padding: 0 140px 0 0
 	&__input
 		input
 			border: none
 			vertical-align: top
 			font-size: 20px
 			padding: 10px 15px
-			width: 600px
+			width: 100%
 			+one
 	&__btn
 		position: absolute
@@ -420,6 +478,10 @@ a
 			line-height: 1
 			font-size: 16px
 			cursor: pointer
+			+r3
+				padding: 15px 35px 14px
+				width: 130px
+				text-align: center
 			&:hover
 				background: #FC3180
 
@@ -841,3 +903,126 @@ a
 			background: lighten(#fc3180, 10%)
 		&:active
 			background: darken(#fc3180, 10%)
+
+.mobile-header
+	padding: 17px 20px
+	background-color: #fff
+	box-shadow: 1px 2px 2px rgba(3, 3, 3, 0.26)
+	display: none
+	+r1
+		display: block
+		
+.mobile-nav
+	position: fixed
+	top: 0
+	bottom: 0
+	right: 0
+	width: 280px
+	z-index: 200
+	background-color: #f7f7f7
+	box-shadow: -2px 0 10px rgba(0, 0, 0, 0.4)
+	padding: 60px 0 0
+	overflow: auto
+	transform: translateX(100%)
+	transition: transform 0.4s ease, opacity 0.25s ease, visibility 0.25s ease
+	visibility: hidden
+	opacity: 0
+	&.is-active
+		transform: translateX(0)
+		opacity: 1
+		visibility: visible
+		
+	a
+		font-size: 17px
+		color: #666
+		text-transform: uppercase
+		+rob
+		font-weight: 400
+		display: block
+		padding: 0 18px
+		line-height: 35px
+		position: relative
+		&.is-active
+			i
+				display: block
+		i
+			font-size: 7px
+			position: absolute
+			top: 15px
+			right: 20px
+			display: none
+	&__dropdown
+		display: none
+		a
+			font-weight: 300
+			text-transform: none
+			padding: 0 37px
+	&__search
+		padding: 0 18px
+		position: relative
+		margin-bottom: 20px
+	&__input
+		font-size: 12px
+		color: #999
+		padding: 10px 27px
+		width: 100%
+		background: none
+		border-bottom: 1px solid #ccc
+.btn-search
+	background: none
+	font-size: 18px
+	color: #0947a7
+	position: absolute
+	top: 8px
+	left: 18px
+.btn-user
+	background: none
+	position: absolute
+	top: 17px
+	left: 20px
+	font-size: 25px
+	color: #0947a7
+.btn-menu
+	background: none
+	font-size: 16px
+	color: #0947a7
+	margin: 5px 0
+	position: absolute
+	top: 17px
+	right: 20px
+	z-index: 300
+	transition: right 0.3s ease
+	&.is-active
+		right: 240px
+		position: fixed
+		transition-delay: 0.1s
+.mobile-btns
+	font-size: 0
+	text-align: center
+	
+	li
+		display: inline-block
+		vertical-align: middle
+		padding: 0 11px
+	a
+		display: block
+		font-size: 26px
+		position: relative
+		color: #0947a7
+		&.icon-sale
+			font-style: 28px
+		span
+			+rob
+			font-size: 10px
+			position: absolute
+			top: 0
+			right: -10px
+			width: 18px
+			height: 18px
+			line-height: 18px
+			background-color: #f50057
+			color: #fff
+			text-align: center
+			border-radius: 50%
+			overflow: hidden
+			z-index: 2
