@@ -911,7 +911,16 @@ a
 	display: none
 	+r1
 		display: block
-		
+.mobile-overlay
+	position: fixed
+	top: 0
+	bottom: 0
+	left: 0
+	right: 0
+	z-index: 190
+	display: none	
+	&.is-active
+		display: block	
 .mobile-nav
 	position: fixed
 	top: 0
@@ -1026,3 +1035,4 @@ a
 			border-radius: 50%
 			overflow: hidden
 			z-index: 2
+

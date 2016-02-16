@@ -72,22 +72,20 @@ $(document).ready(function() {
 		if ($(this).hasClass('is-active')) {
 			$(this).removeClass('is-active');
 			$('.js-mobile-nav').removeClass('is-active');
+			$('.mobile-overlay').removeClass('is-active');
 		}
 		else {
 			$('.js-mobile-nav').addClass('is-active');
 			$(this).addClass('is-active');
+			$('.mobile-overlay').addClass('is-active');
 		}
 		return false;
 	});
-	$('.js-mobile-nav').each(function() {
-		$('body').click(function() {
-			if ($('.js-nav-btn').hasClass('is-active')) {
-				$('.js-nav-btn').removeClass('is-active');
-				$('.js-mobile-nav').removeClass('is-active');
-			}
-		});
-		$(this).click(function() {
-			return false;
-		});
+	$('.mobile-overlay').click(function() {
+		if ($('.js-nav-btn').hasClass('is-active')) {
+			$('.js-nav-btn').removeClass('is-active');
+			$('.js-mobile-nav').removeClass('is-active');
+			$('.mobile-overlay').removeClass('is-active');
+		}
 	});
 });
