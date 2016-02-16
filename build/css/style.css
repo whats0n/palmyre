@@ -338,8 +338,7 @@ a { text-decoration: none; }
 .mobile-nav.is-active { -webkit-transform: translateX(0); -ms-transform: translateX(0); transform: translateX(0); opacity: 1; visibility: visible; }
 .mobile-nav__inner { overflow: auto; height: 100%; }
 .mobile-nav a { font-size: 17px; color: #666; text-transform: uppercase; font-family: "Roboto", Arial, sans-serif; font-weight: 400; display: block; padding: 0 18px; line-height: 35px; position: relative; }
-.mobile-nav a.is-active i { display: block; }
-.mobile-nav a i { font-size: 7px; position: absolute; top: 15px; right: 20px; display: none; }
+.mobile-nav a i { font-size: 7px; position: absolute; top: 15px; right: 20px; }
 .mobile-nav__dropdown { display: none; }
 .mobile-nav__dropdown a { font-weight: 300; text-transform: none; padding: 0 37px; }
 .mobile-nav__search { padding: 0 18px; position: relative; margin-bottom: 20px; }
